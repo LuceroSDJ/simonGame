@@ -28,6 +28,10 @@ $(".btn").click(function () {
     playSound(userChosenColor);
 
     animatePress(userChosenColor);
+
+    /* Call checkAnswer() after a user has clicked and chosen their answer, 
+    passing in the index of the last answer in the user's sequence. */ 
+    checkAnswer(userClickedPattern.length-1)
 });
 
 function playSound(name) {
@@ -36,6 +40,7 @@ function playSound(name) {
 }
 
 function nextSequence() {
+    userClickedPattern = [];
     level++;
     $("#level-title").text("Level " + level);
     //choose a color randomly
@@ -57,10 +62,12 @@ function nextSequence() {
 function checkAnswer(currentLevel) {
     if(gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
         if(userClickedPattern.length === gamePattern.length) {
+            console.log('success');
             setTimeout(function() {
                 nextSequence();
             },1000)
         } 
+        
     }
 
 }

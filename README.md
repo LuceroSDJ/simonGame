@@ -31,3 +31,20 @@ animatePress()
 playSound()
 startOver()
 setTimeout()
+
+* Game starts on keypress; first card is randomly chosen, it blinks, and the color name gets pushed into gamePatter empty array.
+
+* user input? On button click, it blinks, and its id value gets pushed into userClickedPattern empty array.
+
+** simultaneously, sound plays, card is animated and we check the answer
+
+* how do we check the answer? we compare gamePatter and userClickedPatter arrays. 
+Conditional statement:
+If successful: run nextSequence()
+If unsuccessful: play 'wrong' sound and add game-over class. Then, remove the class after a few seconds.
+Finally, call starOver()
+
+
+
+
+
